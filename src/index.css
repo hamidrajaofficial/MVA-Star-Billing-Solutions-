@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  
+  --color-primary: #02ADF1;
+  --color-primary-dark: #0093CE;
+  --color-navy-dark: #284469;
+  --color-navy: #31527D;
+  --color-slate-body: #334155;
+  --color-slate-muted: #64748B;
+  --color-soft: #F4F9F9;
+  --color-subtle: #F1F5F9;
+  --color-teal-soft: #EAF7FF;
+  --color-ice-blue: #E3F3FF;
+  --color-section-bg: #F4F9F9;
+  
+  --shadow-primary: 0 10px 15px -3px rgba(2, 173, 241, 0.2);
+
+  --animate-spin-slow: spin 12s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+  60% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.shine-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+  z-index: 50;
+}
+
+.shine-button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-muted bg-white antialiased leading-relaxed;
+    font-size: 17px;
+  }
+  
+  h1 {
+    @apply font-heading text-navy-dark font-bold tracking-tight text-3xl md:text-[40px];
+    line-height: 1.2;
+  }
+  
+  h2 {
+    @apply font-heading text-navy-dark font-bold tracking-tight text-3xl md:text-[40px];
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply font-heading text-primary font-black tracking-tight;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  h4 {
+    @apply font-heading text-navy-dark font-black tracking-tight;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  h5 {
+    @apply font-heading text-navy-dark font-black tracking-tight;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  
+  h6 {
+    @apply font-heading text-navy-dark font-black tracking-tight;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 17px;
+    @apply leading-relaxed;
+  }
+
+  /* Card specific typography - 1px smaller as requested */
+  [class*="card"] p, 
+  .glass-card p, 
+  [class*="bg-navy"] p, 
+  [class*="bg-section"] p,
+  .feature-list p,
+  .card-p {
+    font-size: 16px;
+  }
+
+  li {
+    font-size: 16px;
+  }
+
+  li::marker {
+    @apply text-primary;
+  }
+
+  ul:not([class*="list-"]) {
+    @apply list-disc pl-5;
+  }
+
+  ol:not([class*="list-"]) {
+    @apply list-decimal pl-5;
+  }
+}
+
+.glass-card {
+  @apply bg-soft border border-slate-100 rounded-2xl shadow-sm hover:border-primary/30 transition-all duration-300;
+}
+
+.btn-primary {
+  @apply px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl shadow-primary transition-all duration-200 flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 bg-white border-2 border-slate-100 hover:border-slate-200 text-navy-dark font-bold rounded-xl transition-all duration-200 flex items-center justify-center gap-2;
+}
+
+.badge-teal {
+  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-soft text-primary text-xs font-bold tracking-wide mb-6 border border-primary/10;
+}
+
+.icon-box-styled {
+  @apply w-14 h-14 flex items-center justify-center text-primary bg-primary/5 rounded-2xl transition-all duration-300 hover:bg-primary/10 hover:scale-110;
+}
