@@ -122,7 +122,7 @@ export default function ServiceHero({
               <img
                 src={imageSrc}
                 alt="Medical Professional"
-                className="w-full h-auto object-contain max-h-[600px] mx-auto relative z-10"
+                className="w-full h-auto object-contain max-h-[600px] mx-auto relative z-10 translate-y-[35px]"
               />
             </div>
           </motion.div>

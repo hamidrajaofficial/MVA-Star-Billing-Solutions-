@@ -20,7 +20,7 @@ export default function SpecialtyHero({
   ctaHref = "/contact"
 }: SpecialtyHeroProps) {
   return (
-    <section className="relative bg-navy-dark pt-32 pb-48">
+    <section className="relative bg-navy-dark pt-[110px] pb-[30px]">
       {/* Background Section - Full Width Visuals */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-[#0A192F]" /> {/* Darker navy base */}
@@ -31,9 +31,6 @@ export default function SpecialtyHero({
         {/* Gradient to ensure text readability while showing image */}
         <div className="absolute inset-0 bg-navy-dark/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/80 to-navy-dark/10" />
-        
-        {/* Decorative Curved Bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ clipPath: 'ellipse(85% 100% at 50% 100%)' }} />
       </div>
       
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
