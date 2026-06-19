@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowDown } from 'lucide-react';
+import { HelpCircle, ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
@@ -39,14 +39,19 @@ export default function FAQ({ bgColor = "bg-section-bg", items = faqs }: Props) 
         <div className="relative z-10 grid lg:grid-cols-12 gap-12 lg:gap-20">
           
           {/* Left Content: Heading and Description */}
-          <div className="lg:col-span-12 lg:col-span-5">
+          <div className="col-span-12 lg:col-span-5 lg:sticky lg:top-[100px] self-start">
             <div className="mb-8">
               <div className="badge-teal">
                 Frequently Asked Questions
               </div>
-              <h2 className="mb-6 tracking-tight">
-                Definitive <span className="text-primary italic">Healthcare Virtual Assistant</span> FAQ
-              </h2>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                  <HelpCircle className="w-7 h-7" />
+                </div>
+                <h2 className="tracking-tight text-navy-dark leading-tight">
+                  Definitive <span className="text-primary italic">Healthcare</span> FAQ
+                </h2>
+              </div>
               
               <p className="text-[#425466] text-lg leading-relaxed">
                 Our <span className="font-semibold text-navy-dark">healthcare virtual assistants</span> provide solutions for the most common clinical situations. From insurance verification to customized medical matching, get the facts you need.
@@ -55,12 +60,12 @@ export default function FAQ({ bgColor = "bg-section-bg", items = faqs }: Props) 
           </div>
 
           {/* Right Content: FAQ Accordion */}
-          <div className="lg:col-span-12 lg:col-span-7">
+          <div className="col-span-12 lg:col-span-7">
             <div className="space-y-4">
               {items.map((faq, index) => (
                 <div 
                   key={index} 
-                  className="bg-section-bg rounded-[24px] px-6 md:px-8 border border-transparent hover:border-primary/20 transition-all shadow-sm"
+                  className="bg-white rounded-[24px] px-6 md:px-8 border border-[#E2E8F0] hover:border-primary/20 transition-all shadow-sm"
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -74,7 +79,7 @@ export default function FAQ({ bgColor = "bg-section-bg", items = faqs }: Props) 
                       transition={{ duration: 0.3 }}
                       className={`flex-shrink-0 ${openIndex === index ? 'text-primary' : 'text-[#425466]'}`}
                     >
-                      <ArrowDown className="w-5 h-5 transition-transform" />
+                      <ChevronDown className="w-5 h-5 transition-transform" />
                     </motion.div>
                   </button>
                   
