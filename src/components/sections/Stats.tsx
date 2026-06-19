@@ -12,7 +12,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="stats" className="relative z-20 pt-10 md:pt-16 pb-[30px]">
+    <section id="stats" className="relative z-20 pt-0 pb-[30px]">
       {/* Background Section (Balanced blue bar) */}
       <div className="bg-primary h-[100px] flex flex-col items-center justify-center text-center px-4 shadow-sm">
       </div>
