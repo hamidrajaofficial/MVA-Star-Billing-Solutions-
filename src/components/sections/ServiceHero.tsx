@@ -48,7 +48,7 @@ export default function ServiceHero({
   heroFeatures = defaultFeatures
 }: ServiceHeroProps) {
   return (
-    <section className="relative bg-white pt-[80px] pb-[30px]">
+    <section className="relative bg-white pt-[110px] pb-[30px]">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
           className="absolute inset-0 opacity-[0.4] bg-cover bg-center"
