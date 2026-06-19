@@ -37,14 +37,15 @@ export default function SpecialtyDetail() {
       <Stats />
       
       <ServiceOverview 
+        bgColor="bg-section-bg"
         title={specialty.overviewTitle}
         headingHighlight={specialty.overviewHeadingHighlight}
         description={specialty.overviewDescription}
       />
 
-      <PracticeChallenges />
+      <PracticeChallenges bgColor="bg-white" />
       
-      <WhatWeDoServices />
+      <WhatWeDoServices bgColor="bg-section-bg" />
       
       <ServingSizes bgColor="bg-white" />
       

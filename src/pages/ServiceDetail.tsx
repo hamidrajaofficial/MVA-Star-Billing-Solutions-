@@ -37,11 +37,12 @@ export default function ServiceDetail() {
         ctaPrimary={{ label: "Hire This Service", href: "/contact" }}
       />
 
-      <div className="relative z-20 -mt-[30px]">
+      <div className="relative z-20">
         <Stats />
       </div>
       
       <ServiceOverview 
+        bgColor="bg-section-bg"
         title={service.overviewTitle}
         headingHighlight={service.overviewHeadingHighlight}
         description={service.overviewDescription}
@@ -54,31 +55,31 @@ export default function ServiceDetail() {
         items={service.whatWeDo}
       />
 
-      <ServingSizes bgColor="bg-white" />
+      <ServingSizes bgColor="bg-section-bg" />
 
       <WhatYouWillGet 
-        bgColor="bg-section-bg"
+        bgColor="bg-white"
         title={`What You Get for ${service.title}`}
         benefits={service.benefits}
       />
       
-      <TrustSection bgColor="bg-white" />
+      <TrustSection bgColor="bg-section-bg" />
 
-      <NextStepCTA bgColor="bg-section-bg" />
+      <NextStepCTA bgColor="bg-white" />
 
-      <HowItWorksSteps bgColor="bg-white" />
+      <HowItWorksSteps bgColor="bg-section-bg" />
 
-      <SoftwareWeUse bgColor="bg-section-bg" />
-      <LocationSection bgColor="bg-white" />
+      <SoftwareWeUse bgColor="bg-white" />
+      <LocationSection bgColor="bg-section-bg" />
 
-      <SpecialtiesPreview bgColor="bg-section-bg" />
+      <SpecialtiesPreview bgColor="bg-white" />
 
-      <CustomerReviews bgColor="bg-white" />
+      <CustomerReviews bgColor="bg-section-bg" />
 
-      <FAQ bgColor="bg-section-bg" items={service.faqItems} />
+      <FAQ bgColor="bg-white" items={service.faqItems} />
 
       <CTASection 
-        bgColor="bg-white"
+        bgColor="bg-section-bg"
         title={<>Optimize Your <span className="text-primary italic">{service.title}</span> Workflow Today</>}
         subtitle={`Join healthcare leaders who have transformed their ${service.title} operations with our specialized virtual assistants.`}
       />
