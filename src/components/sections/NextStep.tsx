@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { HelpCircle, ShieldCheck, Zap, MessageSquare, Shield, Clock, Calendar, FileText, ChevronDown } from 'lucide-react';
+import { HelpCircle, ShieldCheck, Zap, MessageSquare, Shield, Clock, Calendar, FileText, ChevronDown, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 interface Props {
   bgColor?: string;
@@ -52,47 +52,77 @@ export default function NextStep({ bgColor = "bg-section-bg" }: Props) {
 
           {/* Right Column - Form */}
           <div className="lg:sticky lg:top-24">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-              <div className="bg-primary py-6 px-8 text-center">
-                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Request a Consultation</h3>
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
+              <div className="bg-[#1E88E5] py-5 px-8 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Request a consultation</h3>
               </div>
               
-              <form className="p-8 space-y-4">
+              <form className="p-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-2 gap-4">
                   <input 
                     type="text" 
                     placeholder="First Name" 
-                    className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#1E88E5] focus:ring-1 focus:ring-[#1E88E5]/50 transition-all text-sm font-medium"
                   />
                   <input 
                     type="text" 
                     placeholder="Last Name" 
-                    className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#1E88E5] focus:ring-1 focus:ring-[#1E88E5]/50 transition-all text-sm font-medium"
                   />
                 </div>
                 <input 
                   type="tel" 
                   placeholder="Phone Number" 
-                  className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#1E88E5] focus:ring-1 focus:ring-[#1E88E5]/50 transition-all text-sm font-medium"
                 />
                 <input 
                   type="email" 
                   placeholder="Email Address" 
-                  className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-700 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#1E88E5] focus:ring-1 focus:ring-[#1E88E5]/50 transition-all text-sm font-medium"
                 />
                 <div className="relative group">
-                  <select className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-lg text-slate-400 focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer">
-                    <option>Select a Service</option>
-                    <option>Medical Scribe</option>
-                    <option>Billing & Coding</option>
-                    <option>Patient Coordination</option>
+                  <select className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-500 placeholder-slate-400 focus:outline-none focus:border-[#1E88E5] focus:ring-1 focus:ring-[#1E88E5]/50 transition-all text-sm font-medium appearance-none cursor-pointer">
+                    <option value="">Select a service</option>
+                    <option value="medical_scribe">Medical Scribe</option>
+                    <option value="billing_coding">Billing & Coding</option>
+                    <option value="patient_coordination">Patient Coordination</option>
                   </select>
-                  <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-hover:text-primary pointer-events-none transition-colors" />
+                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-450 group-hover:text-[#1E88E5] pointer-events-none transition-colors" />
                 </div>
+
+                <textarea 
+                  placeholder="Your Business description"
+                  rows={4}
+                  className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#1E88E5] focus:ring-1 focus:ring-[#1E88E5]/50 transition-all text-sm font-medium resize-none"
+                />
                 
-                <button className="w-full py-5 bg-navy-dark text-white font-bold rounded-lg shadow-lg hover:bg-navy-light transition-all text-sm tracking-wider uppercase shine-button mt-4">
-                  GET MORE INFORMATION
+                <button className="w-full py-4 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base flex items-center justify-center gap-1 mt-6 shadow-blue-500/20">
+                  <span className="opacity-60 text-[10px] mr-1.5 font-normal tracking-tighter">»»»</span>
+                  Let's Get Digital Now
+                  <span className="opacity-60 text-[10px] ml-1.5 font-normal tracking-tighter">«««</span>
                 </button>
+
+                <div className="pt-6 border-t border-slate-100 text-center space-y-4 mt-6">
+                  <p className="text-xs text-slate-500 font-medium">Connect with us through your favourite social media</p>
+                  <div className="flex items-center justify-center gap-4">
+                    {[
+                      { icon: Facebook, href: "https://facebook.com", color: "hover:text-blue-600 hover:border-blue-600 text-blue-500" },
+                      { icon: Twitter, href: "https://twitter.com", color: "hover:text-sky-400 hover:border-sky-400 text-sky-400" },
+                      { icon: Instagram, href: "https://instagram.com", color: "hover:text-pink-500 hover:border-pink-500 text-pink-500" },
+                      { icon: Linkedin, href: "https://linkedin.com", color: "hover:text-blue-700 hover:border-blue-700 text-blue-600" }
+                    ].map((item, i) => (
+                      <a 
+                        key={i} 
+                        href={item.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`w-9 h-9 rounded-full border border-slate-100 flex items-center justify-center transition-all bg-white shadow-sm hover:scale-105 ${item.color}`}
+                      >
+                        <item.icon className="w-4 h-4" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </form>
             </div>
           </div>

@@ -24,7 +24,7 @@ export default function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="bg-[#0B2545] w-full md:col-span-2 lg:col-span-1 h-[150px] rounded-none shadow-lg flex flex-col items-center justify-center p-5 text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+            className="bg-[#0B2545] w-full md:col-span-2 lg:col-span-1 h-[150px] rounded-lg shadow-lg flex flex-col items-center justify-center p-5 text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
           >
             <h3 className="text-[13px] md:text-sm font-black text-white leading-tight mb-2 uppercase tracking-wide">
               Transform your financial performance
@@ -41,7 +41,7 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index + 1) * 0.1, duration: 0.4 }}
-              className="bg-white w-full h-[150px] rounded-none shadow-lg border border-slate-100 flex flex-col items-center justify-center p-4 text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+              className="bg-white w-full h-[150px] rounded-lg shadow-lg border border-slate-100 flex flex-col items-center justify-center p-4 text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-baseline justify-center mb-2">
                 <span className="text-4xl font-black text-[#02ADF1] tracking-tighter leading-none">
