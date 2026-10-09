@@ -33,15 +33,24 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-bold mb-6">Our Services</h4>
-            <ul className="space-y-4 text-slate-muted">
-              {services.slice(0, 5).map((service) => (
+            <ul className="space-y-3 text-slate-muted text-sm">
+              <li>
+                <Link to="/home-healthcare-billing-services" className="hover:text-primary transition-colors text-white font-medium">
+                  Home Healthcare Billing
+                </Link>
+              </li>
+              <li>
+                <Link to="/home-healthcare-virtual-assistant-services" className="hover:text-primary transition-colors text-white font-medium">
+                  Home Healthcare Virtual Assistant
+                </Link>
+              </li>
+              {services.slice(0, 4).map((service) => (
                 <li key={service.id}>
                   <Link to={`/services/${service.slug}`} className="hover:text-primary transition-colors">
                     {service.title}
                   </Link>
                 </li>
               ))}
-              <li><Link to="/services" className="text-primary font-medium">View All Services</Link></li>
             </ul>
           </div>
 

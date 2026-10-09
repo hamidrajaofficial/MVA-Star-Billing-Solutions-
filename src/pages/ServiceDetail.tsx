@@ -17,6 +17,8 @@ import SoftwareWeUse from '../components/sections/SoftwareWeUse';
 import SpecialtiesPreview from '../components/sections/SpecialtiesPreview';
 import CustomerReviews from '../components/sections/CustomerReviews';
 import FAQ from '../components/sections/FAQ';
+import BillingOnboardingSection from '../components/sections/BillingOnboardingSection';
+import DedicatedRCMSupportSection from '../components/sections/DedicatedRCMSupportSection';
 
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -68,6 +70,25 @@ export default function ServiceDetail() {
       <NextStepCTA bgColor="bg-white" />
 
       <HowItWorksSteps bgColor="bg-section-bg" />
+
+      {service.slug === 'medical-billing-virtual-assistant' && (
+        <>
+          <BillingOnboardingSection 
+            id="how-it-works-billing"
+            bgColor="bg-white"
+            badge="How It Works"
+            titlePart1="Efficient Billing Team Onboarding for "
+            titleHighlight="Maximized Reimbursements"
+            subtitle="We start by understanding your needs, matching you with pre-vetted professionals, and conducting consulted onboarding using our signature framework, ensuring long-term success and improved focus for your practice."
+            showCta={true}
+          />
+          <DedicatedRCMSupportSection 
+            id="rcm-support"
+            bgColor="bg-section-bg"
+            ctaLink="/contact"
+          />
+        </>
+      )}
 
       <SoftwareWeUse bgColor="bg-white" />
       <LocationSection bgColor="bg-section-bg" />

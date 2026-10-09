@@ -4,9 +4,37 @@ import { HelpCircle, ShieldCheck, Zap, MessageSquare, Shield, Clock, Calendar, F
 
 interface Props {
   bgColor?: string;
+  badge?: string;
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
+  challengesIntro?: string;
+  challenges?: Array<{ icon: React.ElementType; text: string }>;
+  nextStepHeading?: string;
+  nextStepText?: string;
 }
 
-export default function NextStep({ bgColor = "bg-section-bg" }: Props) {
+export default function NextStep({ 
+  bgColor = "bg-section-bg",
+  badge = "YOUR NEXT STEP",
+  title = (
+    <>
+      Remarkable <span className="text-primary italic">Healthcare Virtual Assistant</span> Success
+    </>
+  ),
+  subtitle = (
+    <>
+      If you're tired of administrative burden, our specialized <span className="font-bold text-navy-dark underline decoration-primary/30">healthcare virtual assistant for doctors</span> framework ensures you transition from burnout to streamlined practice growth.
+    </>
+  ),
+  challengesIntro = "Most practice owners come to us feeling:",
+  challenges = [
+    { icon: HelpCircle, text: "Unsure about how to integrate virtual support into their workflow" },
+    { icon: Shield, text: "Worried about HIPAA compliance, security, or reliability" },
+    { icon: Zap, text: "Frustrated after trying staffing solutions that didn't work" }
+  ],
+  nextStepHeading = "Here's Exactly What Happens Next",
+  nextStepText = "That's why we take a different approach — we listen carefully, guide you step-by-step, and create a clear, personalized medical support plan."
+}: Props) {
   return (
     <section id="next-step-section" className={`py-[30px] border-t border-slate-100 ${bgColor}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,24 +42,20 @@ export default function NextStep({ bgColor = "bg-section-bg" }: Props) {
           {/* Left Column */}
           <div className="space-y-8">
             <div>
-              <p className="text-primary font-bold uppercase tracking-wider text-sm mb-4">YOUR NEXT STEP</p>
+              <p className="text-primary font-bold uppercase tracking-wider text-sm mb-4">{badge}</p>
               <h2 className="mb-6 text-navy-dark">
-                Remarkable <span className="text-primary italic">Healthcare Virtual Assistant</span> Success
+                {title}
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed">
-                If you're tired of administrative burden, our specialized <span className="font-bold text-navy-dark underline decoration-primary/30">healthcare virtual assistant for doctors</span> framework ensures you transition from burnout to streamlined practice growth.
+                {subtitle}
               </p>
             </div>
 
             <div className="space-y-4">
-              <p className="font-bold text-navy-dark">Most practice owners come to us feeling:</p>
+              <p className="font-bold text-navy-dark">{challengesIntro}</p>
               
               <div className="space-y-3">
-                {[
-                  { icon: HelpCircle, text: "Unsure about how to integrate virtual support into their workflow" },
-                  { icon: Shield, text: "Worried about HIPAA compliance, security, or reliability" },
-                  { icon: Zap, text: "Frustrated after trying staffing solutions that didn't work" }
-                ].map((item, i) => (
+                {challenges.map((item, i) => (
                   <div key={i} className="flex gap-4 p-5 bg-white rounded-xl border border-slate-100 shadow-sm items-center">
                     <div className="text-primary bg-primary/10 p-2 rounded-lg">
                       <item.icon className="w-5 h-5" />
@@ -43,16 +67,16 @@ export default function NextStep({ bgColor = "bg-section-bg" }: Props) {
             </div>
 
             <div className="pt-8">
-              <h3 className="text-2xl font-bold text-navy-dark mb-4">Here's Exactly What Happens Next</h3>
+              <h3 className="text-2xl font-bold text-navy-dark mb-4">{nextStepHeading}</h3>
               <p className="text-slate-600 leading-relaxed max-w-xl">
-                That's why we take a different approach — we listen carefully, guide you step-by-step, and create a clear, personalized medical support plan.
+                {nextStepText}
               </p>
             </div>
           </div>
 
           {/* Right Column - Form */}
-          <div className="lg:sticky lg:top-24">
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
+          <div className="lg:sticky lg:top-24 w-full flex justify-center lg:justify-end">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 w-full max-w-[440px]">
               <div className="bg-[#1E88E5] py-5 px-8 text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Request a consultation</h3>
               </div>
